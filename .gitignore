@@ -47,3 +47,5 @@ _ReSharper*/
 node_modules
 bower_components
 platforms
+plugins
+lib
