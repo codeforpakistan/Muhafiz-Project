@@ -1,0 +1,48 @@
+﻿@model WebApplication.Models.cPerson
+@{
+    ViewBag.Title = "LoginedHome";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Waka Waka</h2>
+
+
+
+   <div class="row">
+        <div class="col-md-offset-5">
+
+            <h1>Welcome To Muhafiz</h1>
+
+        </div>
+   </div>
+ <!--  <div class="row" >
+        <div class="col-md-offset-5">
+            
+             <h2>Are You in Danger?</h2>
+            
+        </div>
+    </div>--> 
+
+   <div class="row">
+      <div class="col-md-offset-5">
+         
+           @using (Html.BeginForm("PanicAlertRequest", "User", FormMethod.Post))
+           {
+
+               <input type="submit" value="Panic Alert" class="btn green" />
+
+
+           }
+           
+
+      </div>
+
+
+    </div>
+<div class="row">
+    <div class="col-md-offset-5">
+
+        <p class="message">@ViewBag.message</p>
+    </div>
+
+</div>

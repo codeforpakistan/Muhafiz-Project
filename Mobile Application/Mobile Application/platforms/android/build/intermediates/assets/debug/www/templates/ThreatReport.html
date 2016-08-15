@@ -1,0 +1,98 @@
+        <!--To include logo in the header-->
+
+    <ion-view view-title='' class="back">
+        <ion-nav-bar  align-title="center">
+
+            <ion-nav-back-button class="button-icon ion-arrow-left-c" ng-click="redirecttoUserhome()">
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-buttons side="left">
+            <button class="button-icon ion-arrow-left-c" ng-click="Home()"></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <img class="title-image" src="img/muhafiz_logo.png" />
+        </ion-nav-buttons>
+        <!--To include title in the header-->
+        <ion-header-bar class="bar-royal">
+            <h1 class="title" style="text-align:center">Report Threat</h1>
+        </ion-header-bar>
+        <ion-content class="padding">
+            <form name="ThreatReportForm" novalidate>
+               <!-- <button class="button button-stable button-royal" ng-click="Home()" style="float: left;height:50px;width:130px " >Home</button>-->
+
+
+            <div class="centered">
+                <table class="centered-table" border="1">
+                    <tr>
+                        <td>
+
+                            <h3 class="title" style="text-align:center">Threat Reporting Form</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="list list-inset">
+                                <!--------------------Autofilled three field----------->
+
+                                <label>{{data.labels.label_Name}}</label>
+                                <br/>
+                                <label class="item item-input">
+                                    <input type="text"  ng-model="data.Name" ng-readonly="true">
+                                </label>
+                                <br />
+
+                                <label>{{data.labels.label_Mobile_No}}</label>
+                                <br/>
+                                <label class="item item-input">
+                                    <input type="text"  ng-model="data.Mobileno" ng-readonly="true">
+                                </label>
+                                <br />
+
+                                <!------------Radio buttons for Threatlevel------------->
+
+                                <label>{{data.labels.label_WorkedAt}}</label>
+                                <br/>
+                                <label class="item item-input">
+                                    <input type="text"  ng-model="data.workat" ng-readonly="true">
+                                </label>
+                                <br />
+
+                                <label><h4>{{data.labels.label_Threatlevel}}</h4></label>
+
+                                <label>
+                                    <input type="radio" ng-model="data.Threatlevel" value="High" Required >
+                                    High
+                                </label><br/><br/>
+                                <label>
+                                    <input type="radio" ng-model="data.Threatlevel" value="Medium">
+                                    Medium
+                                </label><br/><br/>
+                                <label>
+                                    <input type="radio" ng-model="data.Threatlevel" value="Low">
+                                    Low
+                                </label><br/><br/>
+
+                                <label><h4>{{data.labels.label_Detail_of_Threat}}</h4></label>
+
+                                <label>
+                                    <input type="radio" ng-model="data.Threatstatus" value="Yes" Required >
+                                    Yes
+                                </label><br/><br/>
+                                <label>
+                                    <input type="radio" ng-model="data.Threatstatus" value="No" >
+                                    No
+                                </label><br/><br/>
+
+
+                                <button class="button button-block button-royal" ng-click="SubmitThreat()" ng-disabled="ThreatReportForm.$invalid" >Submit Threat</button>
+                            </div>
+
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            </form>
+        </ion-content>
+    </ion-view>
+

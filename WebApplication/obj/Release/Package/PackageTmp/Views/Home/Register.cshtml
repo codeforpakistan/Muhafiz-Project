@@ -1,0 +1,172 @@
+﻿@model thistimepls.Models.cPerson
+@{
+    ViewBag.Title = "Register";
+}
+
+@using (Html.BeginForm("Register", "Home", FormMethod.Post))
+{   
+    
+    
+     <div class="login-page">
+
+    <div class="form">
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-offset-0">
+                    <h4>Welcome to Registration Form</h4>
+                    @Html.HiddenFor(model => model.orgname, new { @id ="hiddenvalue"});
+                </div>
+            </div>
+        </div>
+       
+            
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.UserName, new { placeholder = Html.DisplayNameFor(n => n.UserName) })
+                @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+            </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>Work place:</h5>
+                </div>
+           </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    Organization
+                    @Html.RadioButtonFor(model => model.workat, "Organization", new { @id = "Organizationname" })
+                    @Html.ValidationMessageFor(model => model.workat, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id='divTxtGroup'></div>
+                </div>
+            </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    Freelance 
+                    @Html.RadioButtonFor(model => model.workat, "Freelance")
+
+                    @Html.ValidationMessageFor(model => model.workat, "", new { @class = "text-danger" })
+                </div>
+            </div>
+             </div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.mobilde, new { placeholder = Html.DisplayNameFor(n => n.mobilde) })
+                @Html.ValidationMessageFor(model => model.mobilde, "", new { @class = "text-danger" })
+           </div>
+
+        
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.email, new { placeholder = Html.DisplayNameFor(n => n.email) })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                <p style="color:red">@ViewBag.message;</p>
+
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.station, new { placeholder = "Stationed at :(city)" })
+                @Html.ValidationMessageFor(model => model.station, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.role, new SelectList(
+                  new List<Object>{
+                       new { value = "Role:" , text = "Role:"  },
+                       new { value = "Cameraman" , text = "Cameraman" },
+                       new { value = "Reporter" , text = "Reporter"},
+                       new { value = "EditorialStaff" , text = "EditorialStaff"  },
+                       new { value = "SupportStaff" , text = "SupportStaff" }
+                       
+                    },
+                  "value",
+                  "text",
+                   0), new { @id = "roledropdown" })
+
+            </div>
+            <div class="form-group">
+                @Html.PasswordFor(m => m.password, new { placeholder = "Password" })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.PasswordFor(m => m.Confirmpassword, new { placeholder = "Confirm Password" , onblur = "SendOrganizationName()" })
+                @Html.ValidationMessageFor(model => model.Confirmpassword, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-12">
+                    <input type="submit" value="Submit" id="submit"class="btn btn-default" />
+                </div>
+
+            </div>
+
+
+        <p class="message">Already have an account? @Html.ActionLink("SignIn here", "Login", "Home")</p>
+        </div>
+    </div>
+    <!--
+    <input type="password" name="Password" />
+    You can use HTML inputs, but it's more reliable to use strongly-typed MVC helpers.
+    -->
+}
+
+<html>
+<head>
+    <title></title>
+    
+    <script src="~/scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+             
+        $(function () {
+            if ($('#Organizationname').get("checked")) {
+
+               // alert("anhos");
+
+
+            }
+           
+            $('#Organizationname').click(function () {
+                
+               
+                $("#divTxtGroup").empty();
+                var newTextBoxDiv1 = $(document.createElement('div')).attr("id", 'divTxt');
+                newTextBoxDiv1.after().html('<label> </label><input type="text" id="txt"  required/>');
+                newTextBoxDiv1.appendTo("#divTxtGroup");
+            });
+
+        });
+
+      
+
+
+        function SendOrganizationName() {
+         
+            var element = document.getElementById('txt');
+            if (typeof (element) != 'undefined' && element != null) {
+               
+                $("#hiddenvalue").val(document.getElementById('txt').value);
+                
+            }
+        
+                
+
+
+
+
+
+
+        }
+
+
+    
+              
+    </script>
+</head>
+<body>
+
+</body>
+</html>

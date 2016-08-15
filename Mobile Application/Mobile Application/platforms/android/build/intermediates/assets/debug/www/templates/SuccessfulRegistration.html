@@ -1,0 +1,80 @@
+﻿
+<form name="ThreatReportForm" novalidate>
+        <ion-view view-title="Threat Report">
+            <ion-content class="padding">
+
+                <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="redirecttoUserhome()">Back</a>
+                <div class="centered">
+                    <table class="centered-table" border="1">
+                        <tr>
+                            <td>
+
+                                <h3 class="title" style="text-align:center">Threat Reporting Form</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="list list-inset">
+                                    <!--------------------Autofilled three field----------->
+
+                                    <label>{{data.labels.label_Name}}</label>
+                                    <br/>
+                                    <label class="item item-input">
+                                        <input type="text"  ng-model="data.Name">
+                                    </label>
+                                    <br />
+
+                                    <label>{{data.labels.label_Mobile_No}}</label>
+                                    <br/>
+                                    <label class="item item-input">
+                                        <input type="text"  ng-model="data.Mobileno">
+                                    </label>
+                                    <br />
+
+                                    <!------------Radio buttons for Threatlevel------------->
+
+                                    <label>{{data.labels.label_WorkedAt}}</label>
+                                    <br/>
+                                    <label class="item item-input">
+                                        <input type="text"  ng-model="data.workat">
+                                    </label>
+                                    <br />
+
+                                    <label><h4>{{data.labels.label_Threatlevel}}</h4></label>
+
+                                    <label>
+                                        <input type="radio" ng-model="data.Threatlevel" value="High" Required >
+                                        High
+                                    </label><br/><br/>
+                                    <label>
+                                        <input type="radio" ng-model="data.Threatlevel" value="Medium">
+                                        Medium
+                                    </label><br/><br/>
+                                    <label>
+                                        <input type="radio" ng-model="data.Threatlevel" value="Low">
+                                        Low
+                                    </label><br/><br/>
+
+                                    <label><h4>{{data.labels.label_Detail_of_Threat}}</h4></label>
+
+                                    <label>
+                                        <input type="radio" ng-model="data.Threatstatus" value="No" Required >
+                                        No
+                                    </label><br/><br/>
+                                    <label>
+                                        <input type="radio" ng-model="data.Threatstatus" value="Yes">
+                                        Yes
+                                    </label><br/><br/>
+
+
+                                    <button class="button button-block button-royal" ng-click="SubmitThreat()" ng-disabled="ThreatReportForm.$invalid">Submit Threat</button>
+                                </div>
+
+                            </td>
+
+                        </tr>
+                    </table>
+                </div>
+            </ion-content>
+        </ion-view>
+</form>

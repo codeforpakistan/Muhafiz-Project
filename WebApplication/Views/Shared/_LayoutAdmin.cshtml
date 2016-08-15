@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Muhafiz Project</title>
+    <link href="~/Content/MyStyles.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/scripts/bootstrap.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            
+                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                  </button>
+             
+                <a class="navbar-brand" href="#" style="padding-top:0%">
+                    <img src="~/Content/46x49 white.png">
+                </a>
+               <div class="navbar-header pull-right">
+                   <a class="btn navbar-btn btn-danger" name="logout" id="logout" value="Log Out" href="~/Home/AdminLogout">Log Out</a>
+                   
+               </div>
+            
+           
+             <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"> 
+                    @{
+                        long PanicAlertscount = 0;
+                        if (HttpContext.Current.Session["PanicAlertsCount"] != null )
+                        {
+                            PanicAlertscount = (long)HttpContext.Current.Session["PanicAlertsCount"];
+                        }
+
+
+                       }
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registered Users</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Admin/Index">Registration Requests</a></li>
+                            <li class="divider"></li>
+                            <li><a href="~/Admin/RegisteredUsers">Registered Users</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="~/Admin/PanicAlerts">Panic Alerts <span class="badge pull-right" style="color:red">@PanicAlertscount</span></a>
+                       
+                    </li>
+                    <li>
+                        <a href="~/Admin/InfoUpdateRequests">Profile Update Requests</a>
+                        
+                    </li>
+                   <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Threats </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Admin/GetAllThreathRequests">Threat Reports</a></li>
+                            <li class="divider"></li>
+                            <li><a href="~/Admin/ThreatDetailConfirmation">Detailed threat confirmations</a></li>
+                            <li class="divider"></li>
+                            <li><a href="~/Admin/ThreatSearchIndex">Report History</a></li>
+                            <li class="divider"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container body-content">
+        @RenderBody()
+       
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Muhafiz Group</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

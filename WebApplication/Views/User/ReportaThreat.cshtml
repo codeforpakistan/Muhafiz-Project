@@ -1,0 +1,81 @@
+﻿@model WebApplication.Models.ThreatReportViewModel
+@{
+    ViewBag.Title = "ReportaThreat";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>ReortaThreat</h2>
+
+@using (Html.BeginForm("ReportThreat", "User", FormMethod.Post))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-offset-3">
+                    <h2> Threat Reporting Form</h2>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Name: ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Users.UserName, new { htmlAttributes = new { @class = "form-control" , @readonly = "readonly" , @id = "Textboxes" } })
+               
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Mobile no: ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Users.mobilde, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" , @id = "Textboxes" } })
+
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Worked place:  ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Users.workat, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @id = "Textboxes" } })
+
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Threat level:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.ThreatNotification.Level_Of_Threat, "High") High
+
+                @Html.RadioButtonFor(model => model.ThreatNotification.Level_Of_Threat, "Medium") Midium
+
+                @Html.RadioButtonFor(model => model.ThreatNotification.Level_Of_Threat, "Low") Low
+
+                @Html.ValidationMessageFor(model => model.ThreatNotification.Level_Of_Threat, "", new { @class = "text-danger" })
+              </div>
+         </div>
+        <div class="form-group">
+            @Html.Label("Is this related to a previously reported threat?", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.ThreatNotification.Status, true) Yes
+                @Html.RadioButtonFor(model => model.ThreatNotification.Status, false) No
+
+                @Html.ValidationMessageFor(model => model.ThreatNotification.Status, "", new { @class = "text-danger" })
+            </div>
+       </div>
+        <div class="form-group">
+
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit Threat" class="btn btn-default" />
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <p id="Labels">&nbsp; &nbsp; &nbsp; &nbsp; @ViewBag.message</p>
+            </div>
+        </div>
+
+        
+    </div>
+
+
+
+        }

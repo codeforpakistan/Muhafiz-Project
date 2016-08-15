@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81908F6C-663A-4E24-8DA2-6101831123BF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mobile_Application</RootNamespace>
+    <AssemblyName>Mobile Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Mobile Application\Api\UserScripts\ConnectionScript\Connectionscript.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\LoginandRegistrationDefinations.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PanicDefinitions.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\changelog.md" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\class.phpmailer.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\class.phpmaileroauth.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\class.phpmaileroauthgoogle.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\class.pop3.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\class.smtp.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\composer.json" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\composer.lock" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\docs\generatedocs.sh" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\code_generator.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\DKIM.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\exceptions.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\gmail.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\gmail_xoauth.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\mail.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\mailing_list.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\pop_before_smtp.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\sendmail.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\send_file_upload.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\send_multiple_file_upload.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\signed-mail.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\smtp.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\smtp_check.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\smtp_no_auth.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\ssl_options.phps" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\extras\EasyPeasyICS.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\extras\htmlfilter.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\extras\ntlm_sasl_client.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\extras\README.md" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\get_oauth_token.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-am.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-ar.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-az.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-be.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-bg.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-br.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-ca.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-ch.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-cz.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-de.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-dk.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-el.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-eo.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-es.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-et.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-fa.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-fi.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-fo.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-fr.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-gl.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-he.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-hr.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-hu.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-id.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-it.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-ja.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-ka.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-ko.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-lt.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-lv.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-ms.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-nl.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-no.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-pl.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-pt.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-ro.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-ru.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-se.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-sk.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-sl.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-sr.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-tr.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-uk.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-vi.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-zh.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\language\phpmailer.lang-zh_cn.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\LICENSE" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\PHPMailerAutoload.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\README.md" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\test\bootstrap.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\test\fakepopserver.sh" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\test\fakesendmail.sh" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\test\phpmailerLangTest.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\test\phpmailerTest.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\test\runfakepopserver.sh" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\test\testbootstrap-dist.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\test\test_callback.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\VERSION" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\_scrutinizer.yml" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\_travis.yml" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\ProfileSettingsDefinitions.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\RecieveSmsFunctionDefinition.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\SMS\ViaNettSMS.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\ThreatReportDefinations.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\UfoneBusinessSMSAPI-master\UfoneBusinessSMSAPI-master\LICENSE" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\UfoneBusinessSMSAPI-master\UfoneBusinessSMSAPI-master\README.md" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\UfoneBusinessSMSAPI-master\UfoneBusinessSMSAPI-master\UfoneBusinessSMS.php" />
+    <None Include="Mobile Application\Api\UserScripts\LoginandRegistrationscripts.php" />
+    <None Include="Mobile Application\Api\UserScripts\PanicAttackScripts.php" />
+    <None Include="Mobile Application\Api\UserScripts\ProfileSettingsScripts.php" />
+    <None Include="Mobile Application\Api\UserScripts\RecieveSmS.php" />
+    <None Include="Mobile Application\Api\UserScripts\ThreatReportScripts.php" />
+    <None Include="Mobile Application\bower.json" />
+    <None Include="Mobile Application\ionic.project" />
+    <None Include="Mobile Application\package.json" />
+    <None Include="Mobile Application\www\img\Thumbs.db" />
+    <None Include="Mobile Application\www\lib\angular-animate\angular-animate.min.js.map" />
+    <None Include="Mobile Application\www\lib\angular-animate\bower.json" />
+    <None Include="Mobile Application\www\lib\angular-animate\package.json" />
+    <None Include="Mobile Application\www\lib\angular-animate\README.md" />
+    <None Include="Mobile Application\www\lib\angular-animate\_bower.json" />
+    <None Include="Mobile Application\www\lib\angular-sanitize\angular-sanitize.min.js.map" />
+    <None Include="Mobile Application\www\lib\angular-sanitize\bower.json" />
+    <None Include="Mobile Application\www\lib\angular-sanitize\package.json" />
+    <None Include="Mobile Application\www\lib\angular-sanitize\README.md" />
+    <None Include="Mobile Application\www\lib\angular-sanitize\_bower.json" />
+    <None Include="Mobile Application\www\lib\angular-ui-router\bower.json" />
+    <None Include="Mobile Application\www\lib\angular-ui-router\CHANGELOG.md" />
+    <None Include="Mobile Application\www\lib\angular-ui-router\CONTRIBUTING.md" />
+    <None Include="Mobile Application\www\lib\angular-ui-router\LICENSE" />
+    <None Include="Mobile Application\www\lib\angular-ui-router\README.md" />
+    <None Include="Mobile Application\www\lib\angular-ui-router\_bower.json" />
+    <None Include="Mobile Application\www\lib\angular\angular.min.js.gzip.gz" />
+    <None Include="Mobile Application\www\lib\angular\angular.min.js.map" />
+    <None Include="Mobile Application\www\lib\angular\bower.json" />
+    <None Include="Mobile Application\www\lib\angular\package.json" />
+    <None Include="Mobile Application\www\lib\angular\README.md" />
+    <None Include="Mobile Application\www\lib\angular\_bower.json" />
+    <None Include="Mobile Application\www\lib\ionic\fonts\ionicons.eot" />
+    <None Include="Mobile Application\www\lib\ionic\fonts\ionicons.ttf" />
+    <None Include="Mobile Application\www\lib\ionic\fonts\ionicons.woff" />
+    <None Include="Mobile Application\www\lib\ionic\scss\ionic.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\ionicons\ionicons.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\ionicons\_ionicons-font.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\ionicons\_ionicons-icons.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\ionicons\_ionicons-variables.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_action-sheet.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_animations.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_backdrop.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_badge.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_bar.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_button-bar.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_button.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_checkbox.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_form.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_grid.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_items.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_list.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_loading.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_menu.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_mixins.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_modal.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_platform.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_popover.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_popup.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_progress.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_radio.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_range.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_refresher.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_reset.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_scaffolding.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_select.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_slide-box.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_slides.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_spinner.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_tabs.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_toggle.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_transitions.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_type.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_util.scss" />
+    <None Include="Mobile Application\www\lib\ionic\scss\_variables.scss" />
+    <None Include="Mobile Application\www\lib\ionic\version.json" />
+    <None Include="Mobile Application\www\lib\ngCordova\bower.json" />
+    <None Include="Mobile Application\www\lib\ngCordova\CHANGELOG.md" />
+    <None Include="Mobile Application\www\lib\ngCordova\LICENSE" />
+    <None Include="Mobile Application\www\lib\ngCordova\package.json" />
+    <None Include="Mobile Application\www\lib\ngCordova\README.md" />
+    <None Include="Mobile Application\www\lib\ngCordova\_bower.json" />
+    <None Include="Mobile Application\_bowerrc" />
+    <None Include="Mobile Application\_editorconfig" />
+    <None Include="Mobile Application\_gitignore.swm" />
+    <None Include="Mobile Application\_gitignore.swn" />
+    <None Include="Mobile Application\_gitignore.swo" />
+    <None Include="Mobile Application\_gitignore.swp" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\docs\Callback_function_notes.txt" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\docs\DomainKeys_notes.txt" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\docs\extending.html" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\docs\faq.html" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\docs\Note_for_SMTP_debugging.txt" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\docs\pop3_article.txt" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\contents.html" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\contentsutf8.html" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\images\phpmailer.png" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\images\phpmailer_mini.png" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\index.html" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\scripts\shAutoloader.js" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\scripts\shBrushPhp.js" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\scripts\shCore.js" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\scripts\shLegacy.js" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\scripts\XRegExp.js" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shCore.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shCoreDefault.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shCoreDjango.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shCoreEclipse.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shCoreEmacs.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shCoreFadeToGrey.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shCoreMDUltra.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shCoreMidnight.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shCoreRDark.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shThemeAppleScript.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shThemeDefault.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shThemeDjango.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shThemeEclipse.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shThemeEmacs.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shThemeFadeToGrey.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shThemeMDUltra.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shThemeMidnight.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shThemeRDark.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\shThemeVisualStudio.css" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\examples\styles\wrapping.png" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\travis.phpunit.xml.dist.xml" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\_gitignore.txt" />
+    <Content Include="Mobile Application\Api\UserScripts\FunctionsDefinition\UfoneBusinessSMSAPI-master\UfoneBusinessSMSAPI-master\_gitignore.txt" />
+    <Content Include="Mobile Application\config.xml" />
+    <Content Include="Mobile Application\debug.log.txt" />
+    <Content Include="Mobile Application\gulpfile.js" />
+    <Content Include="Mobile Application\hooks\after_prepare\010_add_platform_class.js" />
+    <Content Include="Mobile Application\hooks\README.md.html" />
+    <Content Include="Mobile Application\www\css\style.css" />
+    <Content Include="Mobile Application\www\img\adam.jpg" />
+    <Content Include="Mobile Application\www\img\ben.png" />
+    <Content Include="Mobile Application\www\img\ionic.png" />
+    <Content Include="Mobile Application\www\img\max.png" />
+    <Content Include="Mobile Application\www\img\mike.png" />
+    <Content Include="Mobile Application\www\img\muhafiz_logo.png" />
+    <Content Include="Mobile Application\www\img\perry.png" />
+    <Content Include="Mobile Application\www\index.html" />
+    <Content Include="Mobile Application\www\js\app.js" />
+    <Content Include="Mobile Application\www\js\constants.js" />
+    <Content Include="Mobile Application\www\js\controllers.js" />
+    <Content Include="Mobile Application\www\js\directive.js" />
+    <Content Include="Mobile Application\www\js\services.js" />
+    <Content Include="Mobile Application\www\lib\angular-animate\angular-animate.js" />
+    <Content Include="Mobile Application\www\lib\angular-animate\angular-animate.min.js" />
+    <Content Include="Mobile Application\www\lib\angular-animate\index.js" />
+    <Content Include="Mobile Application\www\lib\angular-sanitize\angular-sanitize.js" />
+    <Content Include="Mobile Application\www\lib\angular-sanitize\angular-sanitize.min.js" />
+    <Content Include="Mobile Application\www\lib\angular-sanitize\index.js" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\api\angular-ui-router.d.ts" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\release\angular-ui-router.js" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\release\angular-ui-router.min.js" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\src\common.js" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\src\resolve.js" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\src\state.js" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\src\stateDirectives.js" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\src\stateFilters.js" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\src\templateFactory.js" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\src\urlMatcherFactory.js" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\src\urlRouter.js" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\src\view.js" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\src\viewDirective.js" />
+    <Content Include="Mobile Application\www\lib\angular-ui-router\src\viewScroll.js" />
+    <Content Include="Mobile Application\www\lib\angular\angular-csp.css" />
+    <Content Include="Mobile Application\www\lib\angular\angular.js" />
+    <Content Include="Mobile Application\www\lib\angular\angular.min.js" />
+    <Content Include="Mobile Application\www\lib\angular\index.js" />
+    <Content Include="Mobile Application\www\lib\ionic\css\ionic.css" />
+    <Content Include="Mobile Application\www\lib\ionic\css\ionic.min.css" />
+    <Content Include="Mobile Application\www\lib\ionic\fonts\ionicons.svg" />
+    <Content Include="Mobile Application\www\lib\ionic\js\angular-ui\angular-ui-router.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\angular-ui\angular-ui-router.min.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\angular\angular-animate.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\angular\angular-animate.min.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\angular\angular-resource.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\angular\angular-resource.min.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\angular\angular-sanitize.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\angular\angular-sanitize.min.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\angular\angular.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\angular\angular.min.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\ionic-angular.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\ionic-angular.min.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\ionic.bundle.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\ionic.bundle.min.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\ionic.js" />
+    <Content Include="Mobile Application\www\lib\ionic\js\ionic.min.js" />
+    <Content Include="Mobile Application\www\lib\ngCordova\dist\ng-cordova-mocks.js" />
+    <Content Include="Mobile Application\www\lib\ngCordova\dist\ng-cordova-mocks.min.js" />
+    <Content Include="Mobile Application\www\lib\ngCordova\dist\ng-cordova.js" />
+    <Content Include="Mobile Application\www\lib\ngCordova\dist\ng-cordova.min.js" />
+    <Content Include="Mobile Application\www\templates\Login.html" />
+    <Content Include="Mobile Application\www\templates\menu.html" />
+    <Content Include="Mobile Application\www\templates\pendingRegistration.html" />
+    <Content Include="Mobile Application\www\templates\ProfileSetting.html" />
+    <Content Include="Mobile Application\www\templates\Registration.html" />
+    <Content Include="Mobile Application\www\templates\start.html" />
+    <Content Include="Mobile Application\www\templates\SuccessfulRegistration.html" />
+    <Content Include="Mobile Application\www\templates\ThreatReport.html" />
+    <Content Include="Mobile Application\www\templates\UserHome.html" />
+    <Content Include="Mobile Application\_gitignore.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

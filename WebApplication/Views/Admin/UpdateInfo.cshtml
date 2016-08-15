@@ -1,0 +1,164 @@
+﻿@model WebApplication.Models.cPerson
+@{
+    ViewBag.Title = "UpdateInfo";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2>Update Profile Form</h2>
+@using (Html.BeginForm("UpdateInfo", "Admin", FormMethod.Post))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.Label("Registration ID " ,htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Registration_Id, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+               
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.Label("Name ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+               
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Worked At ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                @Html.EditorFor(model => model.orgname, new { htmlAttributes = new { @class = "form-control" } })
+                
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Mobile No ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.mobilde, new { htmlAttributes = new { @class = "form-control" } })
+              
+               
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Email Address ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+            
+
+               
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Role ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.role, new SelectList(
+                  new List<Object>{
+                       new { value =  "Cameraman"  , text = "Cameraman"  },
+                       new { value = "Reporter" , text = "Reporter" },
+                       new { value ="EditorialStaff" , text = "EditorialStaff"},
+                       new { value = "SupportStaff" , text = "SupportStaff"  },
+
+                    },
+                  "value",
+                  "text",
+                   0), new { @id = "RoleDropDown" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Stationed At", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.station, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.station, "", new { @class = "text-danger" , data_val = "false" })
+
+              
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Current Password ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.password, new { placeholder = Html.DisplayNameFor(n => n.password) , @id = "CurrentPasswordId", onblur = "enableLogonButton()" })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" }) <label id="errormessage"></label>
+               
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("New Password ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.NewPassword, new { placeholder = Html.DisplayNameFor(n => n.password), @id = "NewPasswordId",@readonly = "readonly", data_val = "false" })
+                @Html.ValidationMessageFor(model => model.NewPassword, "", new { @class = "text-danger" })
+
+                
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Confirm New Password ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.ConfirmNewPassword, new { placeholder = Html.DisplayNameFor(n => n.password) , @id = "NewConfirmPasswordId", @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.ConfirmNewPassword, "", new { @class = "text-danger" })
+
+               
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+
+
+
+}
+<div>
+    @Html.ActionLink("Back to List", "InfoUpdateRequests")
+</div>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="scripts/jquery-1.4.1.js"></script>
+    <script type="text/javascript">
+
+        function enableLogonButton() {
+            var value = $("#CurrentPasswordId").val();
+
+
+
+
+            $.ajax({
+                url: '@Url.Action("currentpasswordVerfication", "Admin")',
+                data: { passwordValue: value },
+                type: 'POST',
+                success: function (data) {
+
+                    if (data === "true") {
+
+                        $("#NewPasswordId").removeAttr('readonly');
+                        $("#NewConfirmPasswordId").removeAttr('readonly');
+                    }
+                    else {
+                        $("#NewPasswordId").prop("readonly", true);
+                        $("#NewConfirmPasswordId").prop("readonly", true);
+                         
+                        $("#errormessage").text("Invalid Current Password.");
+                        
+                    }
+                }
+            });
+
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+

@@ -1,0 +1,83 @@
+﻿@model PagedList.IPagedList<thistimepls.Models.cPerson>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2>Registration Requests</h2>
+
+<table class="table">
+<tr>
+    <th>
+        Registration Id
+        
+    </th>
+
+    <th>
+        Name
+    </th>
+    <th>
+       Email Address
+    </th>
+    <th>
+        Mobile no
+    </th>
+   
+    <th>
+        Role
+    </th>
+    <th>
+        Organization name
+        
+    </th>
+    <th>
+        Stationed at: (city)
+    </th>
+    
+
+   
+    <th></th>
+</tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Registration_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mobilde)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orgname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.station)
+        </td>
+       <td>
+            
+            @Html.ActionLink("Approve", "Approve1",new { id = item.Registration_Id , param = item.email }) |
+            @Html.ActionLink("Reject", "Reject", new { id = item.Registration_Id, param = item.Registration_Id }) 
+          
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page }))

@@ -1,0 +1,73 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Muhafiz </title>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"
+    integrity="sha256-C6CB9UYIS9UJeqinPHWTHVqh/E1uhG5Twh+Y5qFQmYg=" crossorigin="anonymous"></script>
+    <link href="~/Content/UserViewStyle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @{  
+
+                thistimepls.Models.cPerson user = (thistimepls.Models.cPerson)HttpContext.Current.Session["User"];
+                long count = (long)HttpContext.Current.Session["UserReportHistory"];}
+            <a class="navbar-brand" href="#" style="padding-top:0%">
+                <img src="~/Content/46x49 white.png">
+            </a>
+            <div class="navbar-header pull-right">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">@user.UserName <span class="glyphicon glyphicon-user pull-right"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/User/ProfileSettingRequest">Profile Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                            <li class="divider"></li>
+                            <li><a href="~/User/ReportHistory">Report History <span class="badge pull-right">@count </span></a></li>
+                            <li class="divider"></li>
+                            <li><a href="~/Home/Logout">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+                            <li class="divider"></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="~/User/LoginedHome">Home <span class="glyphicon glyphicon-home  pull-right"></span></a>
+                       
+                    </li>
+                    <li>
+                        <a href="~/User/ReportaThreat">Report a Threat<span class="glyphicon glyphicon-alert pull-right"></span></a>
+
+                    </li>
+                   
+
+                </ul>
+            </div>
+
+
+         
+         
+        </div>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿@model PagedList.IPagedList<WebApplication.Models.ThreatReportViewModel>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "ThreatDetailConfirmation";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<h2>Confirmations of Detail Threat</h2>
+
+<table class="table">
+    <tr>
+         <th>
+            User Name
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Mobile No
+        </th>
+
+        <th>
+           Threat Report
+        </th>
+        <th>
+            Threat Details 
+
+        </th>
+     
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Users.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Users.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Users.mobilde)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThreatDetails.ThreatReportId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThreatDetails.Threat_Detail_Id)
+            </td>
+            <td>
+
+                @Html.ActionLink("Confirm", "Confirm", new { id = item.ThreatDetails.Threat_Detail_Id, param = item.Users.Registration_Id}) 
+               
+
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("ThreatDetailConfirmation",
+    new { page }))

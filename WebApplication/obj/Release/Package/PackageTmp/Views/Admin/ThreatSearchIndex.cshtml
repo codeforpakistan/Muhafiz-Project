@@ -1,0 +1,68 @@
+﻿@model PagedList.IPagedList<thistimepls.Models.ThreatReportViewModel>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "ThreatSearchIndex";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+   
+    @using (Html.BeginForm())
+    {
+    <p>
+       <strong>Search by Username:</strong>  @Html.TextBox("SearchString")  <input type="submit" value="Search" />
+    </p>
+    }
+
+
+
+    <table class="table">
+        <tr>
+            <th>
+              User Name
+            </th>
+            <th>
+               Threat Report ID
+            </th>
+            <th>
+                Detail Threat ID
+            </th>
+            <th>
+               Source of Threat
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThreatDetails.ThreatReportId)
+                </td>
+                <td>
+                     @{ string LinkName = item.ThreatDetails.Threat_Detail_Id.ToString(); }
+                   
+                       @Html.ActionLink(LinkName,"ThreatDetails", new { id = LinkName }) 
+                    
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThreatDetails.Source)
+                </td>
+               
+            </tr>
+        }
+
+    </table>
+
+
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("ThreatSearchIndex",
+    new { page }))

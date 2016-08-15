@@ -1,0 +1,82 @@
+﻿@model thistimepls.Models.ThreatReportViewModel
+@{
+    ViewBag.Title = "ThreatDetails";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>ThreatDetails</h2>
+
+<table class="table">
+    <tr>
+        <th>
+           
+            Threat Detail Id
+
+        </th>
+        <td>
+
+            @Html.DisplayFor(model => model.ThreatDetails.Threat_Detail_Id)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            
+            Date of Incident
+
+        </th>
+        <td>
+
+            @Html.DisplayFor(model => model.ThreatDetails.Date_of_Incidence)
+        </td>
+    </tr>
+    <tr>
+        <th>Source </th>
+        <td>@Html.DisplayFor(model => model.ThreatDetails.Source)</td>
+
+    </tr>
+    <tr>
+        <th>Details </th>
+        <td>@Html.DisplayFor(model => model.ThreatDetails.Details)</td>
+    </tr>
+    <tr>
+        <th>Witness Any</th>
+        @{ string Witness = Model.ThreatDetails.Witness.ToString(); }
+        <td>@Html.DisplayFor(model => Witness)</td>
+    </tr> 
+    <tr>
+        <th>Person Reasons</th>
+        <td>@Html.DisplayFor(model => model.ThreatDetails.Any_Personal_Reason)</td>
+
+    </tr> 
+    <tr>
+        <th>Suspect</th>
+        
+        @foreach (var item in Model.SuspectsName)
+        {
+          
+
+          <td>@Html.DisplayFor(model => item.Full_Name)</td>
+        }
+    </tr>
+    <tr>
+        <th>To whom User have notified </th>
+        @foreach (var item in Model.NotidiedName)
+        {
+            
+            <td>@Html.DisplayFor(model => item.Name)</td>
+        }
+    </tr>
+    <tr>
+        <th>To whom Muhafiz should notify</th>
+        @foreach (var item in Model.MuhafizNotify)
+        {
+        
+        <td>@Html.DisplayFor(model => item.Name)</td>
+        }
+
+    </tr>
+
+</table>
+<div>
+    @Html.ActionLink("Back to List", "ThreatSearchIndex")
+</div>
