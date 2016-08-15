@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="MySqlConnectionString-Web.config Connection String" description="MySqlConnectionString Connection String used in web.config by the application to access the database." defaultValue="Database=muhafizdb;Data Source=us-cdbr-azure-southcentral-f.cloudapp.net;User Id=b894cd808ec87e;Password=c6cd7754;ConvertZeroDateTime=true" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="I:\\Source\ Control\\Final\ Code\\Web\ Application\\thistimepls\\thistimepls\\thistimepls\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MySqlConnectionString']/@connectionString" />
-  </parameter>
-</parameters>
