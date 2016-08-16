@@ -61,7 +61,7 @@ function Insert_In_ProfileSettings($conn,$Regid,$status,$Email)
     if (mysqli_query($conn, $myquery))
     {
 			$sub="Profile Settings Pending";
-            $body="Your Request to update your profile has been sent to Muhafiz team ,you will be called to update your Profile";
+            $body="Your profile update request has been sent to Muhafiz team. The team will contact you shortly.";
             
            if (smtpmailer($Email, 'muhafizgroup123@gmail.com', 'MuhafizAdmin', $sub, $body)) {
                

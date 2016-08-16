@@ -96,7 +96,7 @@
 							}
 							else{
 								var alertPopup = $ionicPopup.alert({
-									title: 'Your resgistration is not approved by admin'
+									title: 'Your registration is not approved by admin'
 								});
 
 							}
@@ -104,8 +104,8 @@
 				}).error(function (data) {
 					$ionicLoading.hide();
 					var alertPopup = $ionicPopup.alert({
-						title: 'Error!',
-						template: 'An error occured while processing your request kindly check your internet connection!' //+ data
+						title: 'Error',
+						template: 'An error occured while processing your request. Kindly check your internet connection!' //+ data
 					});
 				});
 			}
@@ -182,21 +182,21 @@
 					if (resdata.match("Mobileno")) {
 						var alertPopup = $ionicPopup.alert({
 						  //  title: 'Success',
-							template:'Account with this mobile already exist'
+							template:'Account with this mobile already exists.'
 						});
 
 					}
 					else if (resdata.match("Email")) {
 						var alertPopup = $ionicPopup.alert({
 						   // title: 'Success',
-							template:'Account with this email already exist'
+							template:'Account with this email already exists.'
 						});
 
 					}
 					else if (resdata.match("inserted successfully")) {
 						var alertPopup = $ionicPopup.alert({
 							//title: 'Success',
-							template:'Thank you. Your information has been submitted'
+							template:'Thank you. Your information has been submitted.'
 						});
 						$state.go('pendingRegistration');
 
@@ -212,8 +212,8 @@
 				}).error(function (data) {
 					$ionicLoading.hide();
 					var alertPopup = $ionicPopup.alert({
-						 title: 'Error!',
-						template: 'An error occured while processing your request kindly check your internet connection!' //+ data
+						 title: 'Error',
+						template: 'An error occured while processing your request. Kindly check your internet connection!' //+ data
 					});
 				});
 
@@ -347,13 +347,13 @@
 							
 						}
 						else {
-							alert('can get the permission');
+							alert('Please grant SMS permission to Muhafiz application to send panic alerts using SMS.');
 							sms.requestPermission();
 							// show a helpful message to explain why you need to require the permission to send a SMS
 							// read http://developer.android.com/training/permissions/requesting.html#explain for more best practices
 						}
 					};
-					var error = function (e) { alert('Something went wrong:' + e); };
+					var error = function (e) { alert('An error occurred while requesting sms permission. Please try again. \n' + e); };
 					sms.hasPermission(success, error);
 						
 						
@@ -372,14 +372,14 @@
 							$ionicLoading.hide();
 							var alertPopup = $ionicPopup.alert({
 								//title: 'msg',
-								template: 'Sending SMS to Muhafiz team' +data
+								template: 'SMS sent to Muhafiz team.' //+data
 							});
 
 						}).error(function (data) {
 							$ionicLoading.hide();
 							var alertPopup = $ionicPopup.alert({
-								title: 'error',
-								template: 'error while processing panic request'
+								title: 'Error',
+								template: 'An error occurred while processing panic request.'
 							});
 						}); 
 						
@@ -408,8 +408,8 @@
 						$ionicLoading.hide();
 						if (data == "0") {
 							var alertPopup = $ionicPopup.alert({
-								title: "status",
-								template: 'No Threat Reports to show'
+								title: "Status",
+								template: 'No threats have been reported yet.'
 
 
 							});
@@ -426,8 +426,8 @@
 					}).error(function (data) {
 						$ionicLoading.hide();
 						var alertPopup = $ionicPopup.alert({
-							title: 'Error!',
-						template: 'An error occured while processing your request kindly check your internet connection!' //+ data
+							title: 'Error',
+						template: 'An error occured while processing your request. Kindly check your internet connection!' //+ data
 						});
 					});
 				}
@@ -488,15 +488,15 @@
 					$ionicLoading.hide();
 					var alertPopup = $ionicPopup.alert({
 					   // title: 'Success !',
-						template: 'Your profile update request has been sent to Muhafiz team. The team will contact you shortly' //+data
+						template: 'Your profile update request has been sent to Muhafiz team. The team will contact you shortly.' //+data
 					});
 					$state.go('menu.UserHome');
 
 				}).error(function (data) {
 					$ionicLoading.hide();
 					var alertPopup = $ionicPopup.alert({
-						title: 'Error!',
-						template: 'An error occured while processing your request kindly check your internet connection!' //+ data
+						title: 'Error',
+						template: 'An error occured while processing your request. Kindly check your internet connection!' //+ data
 					});
 				});
 
@@ -561,7 +561,7 @@
 
 							var alertPopup = $ionicPopup.alert({
 								//title: 'Success', //+ data
-								template:'Threat report submitted.'+data
+								template:'Threat report submitted.' //+data
 							});
 
 						$state.go('menu.UserHome');
@@ -569,8 +569,8 @@
 						}).error(function (data) {
 						$ionicLoading.hide();
 						var alertPopup = $ionicPopup.alert({
-							title: 'Error!',
-						template: 'An error occured while processing your request kindly check your internet connection!' //+ data
+							title: 'Error',
+						template: 'An error occured while processing your request. Kindly check your internet connection!' //+ data
 						});
 
 					});

@@ -178,7 +178,7 @@ namespace WebApplication.Controllers
 
                 var message = "Your Threat Report has been sent Wait for call.";
 
-                return RedirectToAction("ReportaThreat", "User", new { returnmessage = message });
+                return RedirectToAction("Login", "Home", new { returnmessage = message });
 
             }
             else {
@@ -299,8 +299,8 @@ namespace WebApplication.Controllers
             {
 
                 var message = "Your Request for Profile Update has been sent Wait for call from admin.";
-               
-                return RedirectToAction("ProfileSettingRequest", "User" ,new { returnmessage = message });
+
+                return RedirectToAction("Login", "User", new { returnmessage = message });
 
             }
             else {

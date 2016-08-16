@@ -609,7 +609,7 @@ namespace WebApplication.Controllers
 
 
 
-                string whounotifyto = "<b>To whom u notify about the threat:</b> <br/>";
+                string whounotifyto = "<b>To whom you notified:</b> <br/>";
               
     
                 if (viewModel.SelectedCheckBoxes != null)
@@ -621,7 +621,7 @@ namespace WebApplication.Controllers
                     whounotifyto += ". " + item.ToString() + "<br/>";}
                  }
                 whounotifyto += "<br/>";
-                string towhommuhafiznotify = "<b>To whom muhafiz should notify:</b> <br/>";
+                string towhommuhafiznotify = "<b>To whom Muhafiz notify:</b> <br/>";
                 int initiall = 0;
                 if (viewModel.SelectedCheckBoxesNotify!=null) {
                 foreach (var item in viewModel.SelectedCheckBoxesNotify)

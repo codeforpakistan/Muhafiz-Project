@@ -74,9 +74,9 @@
         <div ng-show="(data.display == false)" >
         <table class="table1">
             <tr style="outline: thin solid">
-                <th style="outline: thin solid">ThreatID</th>
-                <th style="outline: thin solid">ReportDate</th>
-                <th style="outline: thin solid">ThreatLevel</th>
+                <th style="outline: thin solid">Threat ID</th>
+                <th style="outline: thin solid">Report Date</th>
+                <th style="outline: thin solid">Threat Level</th>
 
 
             </tr>
@@ -85,7 +85,7 @@
 
             <tr style="outline: thin solid" ng-repeat="Threat in ThreatReports track by $index ">
                 <td style="outline: thin solid">&nbsp;&nbsp;&nbsp;&nbsp;{{Threat.ThreatReport_Id}}</td>
-                <td style="outline: thin solid">{{Threat.ReportDatee}}</td>
+                <td style="outline: thin solid">{{Threat.ReportDate}}</td>
                 <td style="outline: thin solid">&nbsp;&nbsp;&nbsp;&nbsp;{{Threat.Level_of_Threat}}</td>
             </tr>
         </table>
