@@ -20,8 +20,8 @@ angular.module('Starting_Point', ['ionic','ngCordova', 'Starting_Point.controlle
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-      ConnectivityMonitor.startWatching();
-
+      //Will be removing ConnectivityMonitor completely, since there are issues with that and just an extra overhead. For now commenting the following code.
+      //ConnectivityMonitor.startWatching();
 
       document.addEventListener("online", onOnline, false);
       document.addEventListener("offline", onOffline, false);

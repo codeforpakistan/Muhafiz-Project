@@ -1,0 +1,8 @@
+Environment variables for building cordova for android
+ANDROID_HOME=I:\Android\SDK
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_25
+
+
+cordova build --debug android
+
+I:\Source Control\Local Repository\Muhafiz-Project\Mobile Application\Mobile Application>

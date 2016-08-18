@@ -313,79 +313,105 @@
 						maxWidth: 200,
 						showDelay: 0
 					});
-					
-					
-					
-
-					/*====Check if the device is ofline=======*/
-					if (ConnectivityMonitor.isOffline()) {
-
-						$ionicLoading.hide();
-						
-						/*==========Code for sending message through the user sim=====================*/
-						var randomno = getuid();
-						var sendto = "03425063376";//admin no
-						var textmsg = "$$@@##"+randomno;
-						
-						
-						
-						var options = {
-						replaceLineBreaks: false, // true to replace \n by a new line, false by default
-							android: {
-								intent: 'INTENT'  // send SMS with the native android SMS messaging
-								//intent: '' // send SMS without open any other app
-							}
-						};
-
-		   
-			
-			
-					var success = function (hasPermission) { 
-						if (hasPermission) {
-							sms.send(sendto,textmsg, options);
-							alert('Sending SMS to Muhafiz team');
-							
-						}
-						else {
-							alert('Please grant SMS permission to Muhafiz application to send panic alerts using SMS.');
-							sms.requestPermission();
-							// show a helpful message to explain why you need to require the permission to send a SMS
-							// read http://developer.android.com/training/permissions/requesting.html#explain for more best practices
-						}
-					};
-					var error = function (e) { alert('An error occurred while requesting sms permission. Please try again. \n' + e); };
-					sms.hasPermission(success, error);
-						
-						
-						
-						
-						
-						
-						
 
 
-					}
-					/*----Checking f the deice is online-----*/
-					if (ConnectivityMonitor.isOnline()) {
-						
-						Ajaxfact.Request('POST', 'PanicAttackScripts.php', data).success(function (data) {
+					Ajaxfact.Request('POST', 'PanicAttackScripts.php', data)
+						.success(function (data) {
 							$ionicLoading.hide();
 							var alertPopup = $ionicPopup.alert({
 								//title: 'msg',
 								template: 'SMS sent to Muhafiz team.' //+data
 							});
-
 						}).error(function (data) {
+
 							$ionicLoading.hide();
-							var alertPopup = $ionicPopup.alert({
-								title: 'Error',
-								template: 'An error occurred while processing panic request.'
-							});
-						}); 
+							/*==========Code for sending message through the user sim=====================*/
+							var randomno = getuid();
+							var sendto = "03425063376";//admin no
+							var textmsg = "$$@@##" + randomno;
+
+							var options = {
+							replaceLineBreaks: false, // true to replace \n by a new line, false by default
+								android: {
+									intent: 'INTENT'  // send SMS with the native android SMS messaging
+									//intent: '' // send SMS without open any other app
+								}
+							};
+
+							var success = function (hasPermission) { 
+								if (hasPermission) {
+									sms.send(sendto,textmsg, options);
+									alert('Sending SMS to Muhafiz team');
+
+								}
+								else {
+									alert('Please grant SMS permission to Muhafiz application to send panic alerts using SMS.');
+									sms.requestPermission();
+									// show a helpful message to explain why you need to require the permission to send a SMS
+									// read http://developer.android.com/training/permissions/requesting.html#explain for more best practices
+								}
+							};
+							var error = function (e) { alert('An error occurred while processing panic request.') };
+							sms.hasPermission(success, error);
+						});	
+					
+					    // The previous logic used was to check the connectivity monitor status isonline and isoffline and based on that sms was sent using php or local sms.
+					    //Am updating this to directly use php and try sending the message using php, it that fails try sending the msg using local service and if that fails show error.
+					    ///*====Check if the device is ofline=======*/
+					    //if (ConnectivityMonitor.isOffline()) {
+
+					    //	$ionicLoading.hide();
 						
+					    //	/*==========Code for sending message through the user sim=====================*/
+					    //	var randomno = getuid();
+					    //	var sendto = "03425063376";//admin no
+					    //	var textmsg = "$$@@##"+randomno;
+						
+						
+						
+					    //	var options = {
+					    //	replaceLineBreaks: false, // true to replace \n by a new line, false by default
+					    //		android: {
+					    //			intent: 'INTENT'  // send SMS with the native android SMS messaging
+					    //			//intent: '' // send SMS without open any other app
+					    //		}
+					    //	};
+							
+					    //    var success = function (hasPermission) { 
+					    //	    if (hasPermission) {
+					    //		    sms.send(sendto,textmsg, options);
+					    //		    alert('Sending SMS to Muhafiz team');
+							
+					    //	    }
+					    //	    else {
+					    //		    alert('Please grant SMS permission to Muhafiz application to send panic alerts using SMS.');
+					    //		    sms.requestPermission();
+					    //		    // show a helpful message to explain why you need to require the permission to send a SMS
+					    //		    // read http://developer.android.com/training/permissions/requesting.html#explain for more best practices
+					    //	    }
+					    //    };
+					    //    var error = function (e) { alert('An error occurred while requesting sms permission. Please try again. \n' + e); };
+					    //    sms.hasPermission(success, error);						
+					    //}
 
+					    ///*----Checking f the deice is online-----*/
+					    //if (ConnectivityMonitor.isOnline()) {
+						
+					    //	Ajaxfact.Request('POST', 'PanicAttackScripts.php', data).success(function (data) {
+					    //		$ionicLoading.hide();
+					    //		var alertPopup = $ionicPopup.alert({
+					    //			//title: 'msg',
+					    //			template: 'SMS sent to Muhafiz team.' //+data
+					    //		});
 
-					}
+					    //	}).error(function (data) {
+					    //		$ionicLoading.hide();
+					    //		var alertPopup = $ionicPopup.alert({
+					    //			title: 'Error',
+					    //			template: 'An error occurred while processing panic request.'
+					    //		});
+					    //	}); 					
+					    //}
 				}
 
 
