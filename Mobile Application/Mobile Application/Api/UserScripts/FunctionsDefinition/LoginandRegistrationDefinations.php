@@ -122,6 +122,7 @@ function SendSms($MessageBody){
     function Login_User($conn,$Email,$Password)
     {
 
+        $myquery = "SELECT a.ContactNumber as AdminContactNumber, r.* FROM admin a LEFT OUTER JOIN registrationtable r on a.Username != r.Email where r.Email='$Email'and r.Password='$Password'";
 
         $result = mysqli_query($conn, $myquery);
         $count=mysqli_num_rows($result);
