@@ -338,7 +338,10 @@
 									//intent: '' // send SMS without open any other app
 								}
 							};
-
+							
+							//TODO: Check IsAndroid and IsIOS over here and using that perform the following functionality of sending the sms.
+							//For android use/uncomment the following code block.
+							/*
 							var success = function (hasPermission) { 
 								if (hasPermission) {
 									sms.send(sendto,textmsg, options);
@@ -352,8 +355,17 @@
 									// read http://developer.android.com/training/permissions/requesting.html#explain for more best practices
 								}
 							};
-							var error = function (e) { alert('An error occurred while processing panic request.') };
+
+							var error = function (e) { alert('An error occurred while processing panic request.'); };
 							sms.hasPermission(success, error);
+							*/
+
+							//For iOS use/uncomment the following code block.
+							
+							var success = function () { alert('Sending SMS to Muhafiz team'); };
+							var error = function (e) { alert('An error occurred while processing panic request.'); };
+							sms.send(sendto, textmsg, options, success, error);
+							
 						});	
 					
 					    // The previous logic used was to check the connectivity monitor status isonline and isoffline and based on that sms was sent using php or local sms.
@@ -365,7 +377,7 @@
 						
 					    //	/*==========Code for sending message through the user sim=====================*/
 					    //	var randomno = getuid();
-					    //	var sendto = "03425063376";//admin no
+					    //	var sendto = $localstorage.get('AdminNumber');        //"03425063376";//admin no
 					    //	var textmsg = "$$@@##"+randomno;
 						
 						
