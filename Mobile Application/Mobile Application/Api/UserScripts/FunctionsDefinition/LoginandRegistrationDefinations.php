@@ -122,8 +122,6 @@ function SendSms($MessageBody){
     function Login_User($conn,$Email,$Password)
     {
 
-        $myquery = "SELECT * FROM RegistrationTable where Email='$Email'and Password='$Password'";
-
 
         $result = mysqli_query($conn, $myquery);
         $count=mysqli_num_rows($result);

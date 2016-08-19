@@ -88,13 +88,14 @@
 					}
 
 					else {
+					    $localstorage.set('AdminNumber', data.AdminContactNumber);
 						$scope.status=data.RegistrationStatus;
 							if($scope.status=="Approved") {
-								$localstorage.set('SESSION_USER', JSON.stringify(data));
+							    $localstorage.set('SESSION_USER', JSON.stringify(data));
 								$state.go('menu.UserHome');
 
 							}
-							else{
+							else {
 								var alertPopup = $ionicPopup.alert({
 									title: 'Your registration is not approved by admin'
 								});
@@ -327,7 +328,7 @@
 							$ionicLoading.hide();
 							/*==========Code for sending message through the user sim=====================*/
 							var randomno = getuid();
-							var sendto = "03425063376";//admin no
+							var sendto = $localstorage.get('AdminNumber'); //"03425063376";//admin no
 							var textmsg = "$$@@##" + randomno;
 
 							var options = {
