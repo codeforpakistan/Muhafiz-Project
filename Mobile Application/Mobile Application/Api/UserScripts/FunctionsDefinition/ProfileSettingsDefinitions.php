@@ -57,7 +57,7 @@ function CreateTable_ProfileSettings($conn)
 function Insert_In_ProfileSettings($conn,$Regid,$status,$Email)
 {
 	//$result;
-    $myquery = "INSERT INTO ProfileSettings(RegistrationId,Status,ProfileSettings_date) VALUES ('$Regid','$status',CURRENT_TIMESTAMP);";
+    $myquery = "INSERT INTO ProfileSettings(RegistrationId,Status,ProfileSettings_date) VALUES ('$Regid','$status',CONVERT_TZ(CURRENT_TIMESTAMP,'-05:00','+00:00'));";
     if (mysqli_query($conn, $myquery))
     {
 			$sub="Profile Settings Pending";

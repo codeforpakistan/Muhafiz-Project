@@ -36,16 +36,14 @@ function CreateTable_PanicAttack($conn)
 /*=======Insert data in witness table======*/
 function Insert_In_PanicAttack($conn,$Regid)
 {
-	$adminno="923425063376";
-    $myquery = "INSERT INTO PanicAttack(RegistrationId,panic_date,seen_status) VALUES ('$Regid',CURRENT_TIMESTAMP,'NotSeen');";
+	  $adminno="923425063376";
+    $myquery = "INSERT INTO PanicAttack(RegistrationId,panic_date,seen_status) VALUES ('$Regid',CONVERT_TZ(CURRENT_TIMESTAMP,'-05:00','+00:00'),'NotSeen');";
     if (mysqli_query($conn, $myquery))
     {
+      date_default_timezone_set("Asia/Karachi");
+      $date = date("Y-m-d h:i:sa", strtotime("+1 hours"));
 			$randomno = rand(1,10000);
-
-			date_default_timezone_set("Asia/Dili");
-
-            $date = date("Y-m-d h:i:sa", strtotime("-4 hours"));
-            $message="$$@@##".$randomno;
+      $message="$$@@##".$randomno;
 			
 			$sms = new UfoneBusinessSMS("03359646370", "B-SMS", "321321");
 			$result = $sms->sendSMS($adminno, $message);

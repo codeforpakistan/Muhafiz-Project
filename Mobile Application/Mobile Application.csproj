@@ -56,8 +56,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Mobile Application\Api\UserScripts\ConnectionScript\Connectionscript.php" />
-    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\LoginandRegistrationDefinations.php" />
-    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PanicDefinitions.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\LoginandRegistrationDefinations.php">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PanicDefinitions.php">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\changelog.md" />
     <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\class.phpmailer.php" />
     <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\class.phpmaileroauth.php" />
@@ -149,13 +153,19 @@
     <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\_scrutinizer.yml" />
     <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\PHPMailer-master\_travis.yml" />
     <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\ProfileSettingsDefinitions.php" />
-    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\RecieveSmsFunctionDefinition.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\RecieveSmsFunctionDefinition.php">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\SMS\ViaNettSMS.php" />
-    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\ThreatReportDefinations.php" />
+    <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\ThreatReportDefinations.php">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\UfoneBusinessSMSAPI-master\UfoneBusinessSMSAPI-master\LICENSE" />
     <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\UfoneBusinessSMSAPI-master\UfoneBusinessSMSAPI-master\README.md" />
     <None Include="Mobile Application\Api\UserScripts\FunctionsDefinition\UfoneBusinessSMSAPI-master\UfoneBusinessSMSAPI-master\UfoneBusinessSMS.php" />
-    <None Include="Mobile Application\Api\UserScripts\LoginandRegistrationscripts.php" />
+    <None Include="Mobile Application\Api\UserScripts\LoginandRegistrationscripts.php">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Mobile Application\Api\UserScripts\PanicAttackScripts.php" />
     <None Include="Mobile Application\Api\UserScripts\ProfileSettingsScripts.php" />
     <None Include="Mobile Application\Api\UserScripts\RecieveSmS.php" />

@@ -197,7 +197,9 @@ namespace WebApplication.Models
 
         }
         public bool reportathreat(ThreatReportViewModel modelobj) {
-            DateTime date= DateTime.Now;
+            var outputTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pakistan Standard Time");
+            DateTime date = TimeZoneInfo.ConvertTime(DateTime.Now, outputTimeZone);
+
             Get_Connection();
             try
             {
@@ -242,7 +244,10 @@ namespace WebApplication.Models
 
         }
         public bool PanicAlertRequest(cPerson Userobj) {
-            DateTime now = DateTime.Now;
+            
+            var outputTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pakistan Standard Time");
+            DateTime now = TimeZoneInfo.ConvertTime(DateTime.Now, outputTimeZone);
+
             Get_Connection();
             try
             {
@@ -272,8 +277,10 @@ namespace WebApplication.Models
 
 
         }
-        public bool UpdateProfileRequest(cPerson Userobj) {
-            DateTime now = DateTime.Now;
+        public bool UpdateProfileRequest(cPerson Userobj) {            
+            var outputTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pakistan Standard Time");
+            DateTime now = TimeZoneInfo.ConvertTime(DateTime.Now, outputTimeZone);
+
             Get_Connection();
             try
             {
@@ -376,7 +383,8 @@ namespace WebApplication.Models
 
         public bool RegistrationRequest(cPerson User, string organizationname) {
 
-            DateTime now = DateTime.Now;
+            var outputTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pakistan Standard Time");
+            DateTime now = TimeZoneInfo.ConvertTime(DateTime.Now, outputTimeZone);
 
             
             Get_Connection();
@@ -507,7 +515,12 @@ namespace WebApplication.Models
                             User.mobilde = reader["Mobileno"].ToString();
                             User.role = reader["Role"].ToString();
                             User.station = reader["StationedAt"].ToString();
-                            User.RegisterationDate = Convert.ToDateTime(reader["reg_date"]);
+
+                            var dateTimeRetrieved = Convert.ToDateTime(reader["reg_date"]); ;
+                            var outputTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pakistan Standard Time");
+                            var outputDateTime = TimeZoneInfo.ConvertTime(dateTimeRetrieved, outputTimeZone);
+                            User.RegisterationDate = outputDateTime;
+
                             User.RegistrationStatus = reader["RegistrationStatus"].ToString();
                         }
 

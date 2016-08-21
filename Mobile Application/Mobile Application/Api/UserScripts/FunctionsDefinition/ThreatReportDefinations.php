@@ -39,11 +39,11 @@ include_once('UfoneBusinessSMSAPI-master/UfoneBusinessSMSAPI-master/UfoneBusines
     {
 		$adminno="923425063376";
 
-        $myquery = "INSERT INTO ThreatNotificationTable(RegistrationId,Level_of_Threat,Threat_status,ReportDate,ProcessThreat_status) VALUES ('$Regid','$Threatlevel','$Threatstatus',CURRENT_TIMESTAMP,'Pending');";
+        $myquery = "INSERT INTO ThreatNotificationTable(RegistrationId,Level_of_Threat,Threat_status,ReportDate,ProcessThreat_status) VALUES ('$Regid','$Threatlevel','$Threatstatus',CONVERT_TZ(CURRENT_TIMESTAMP,'-05:00','+00:00'),'Pending');";
         if (mysqli_query($conn, $myquery))
-        {   date_default_timezone_set("Asia/Dili");
-
-            $date = date("Y-m-d h:i:sa", strtotime("-16 hours"));
+        {   
+            date_default_timezone_set("Asia/Karachi");
+            $date = date("Y-m-d h:i:sa", strtotime("+0 hours"));
             $message="Threat Report from :".$Name.", Registration Id: ".$Regid.", Mobileno : ".$Mobileno.", OrganizatioName: ".$Organizationname.", DateandTime : ".$date;
 			
 			$sms = new UfoneBusinessSMS("03359646370", "B-SMS", "321321");
@@ -91,7 +91,7 @@ function CreateTable_ParentThreats($conn)
 function Insert_In_ThreatReportTable($conn,$Regid,$Threatlevel)
 {
 
-    $myquery = "INSERT INTO ThreatReportTable(RegistrationId,ReportDate,Level_of_Threat) VALUES ('$Regid',CURRENT_TIMESTAMP,'$Threatlevel');";
+    $myquery = "INSERT INTO ThreatReportTable(RegistrationId,ReportDate,Level_of_Threat) VALUES ('$Regid',CONVERT_TZ(CURRENT_TIMESTAMP,'-05:00','+00:00'),'$Threatlevel');";
     if (mysqli_query($conn, $myquery))
     {
         $result="inserted successfully";

@@ -167,11 +167,12 @@ namespace WebApplication.Controllers
         [HttpPost, ActionName("ReportThreat")]
         public ActionResult ReportThreat(Models.ThreatReportViewModel modelobj) {
 
-            DateTime now = DateTime.Now;
+            var outputTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pakistan Standard Time");
+            DateTime now = TimeZoneInfo.ConvertTime(DateTime.Now, outputTimeZone);
             modelobj.Users = (WebApplication.Models.cPerson)Session["User"];
             if (LogedInUsers.reportathreat(modelobj)) {
 
-                string SmSbody = "Threat Report from :" + modelobj.Users.UserName + ", Registration Id:" + modelobj.Users.Registration_Id + ", Mobileno:" + modelobj.Users.mobilde + ",Organizationname " + modelobj.Users.orgname + ", DateandTime: " +now;
+                string SmSbody = "Threat Report from : \n" + modelobj.Users.UserName + ", Registration Id:" + modelobj.Users.Registration_Id + ", Mobileno:" + modelobj.Users.mobilde + ",Organizationname " + modelobj.Users.orgname + ", DateandTime: " +now;
 
                 sendsms(SmSbody, "923425063376");
 

@@ -52,7 +52,7 @@
 	}
 	/*===========Insert in Smslog===========*/	
 	function Insert_InSmsLogs($conn,$name,$reg_ID,$message){
-		$myquery = "INSERT INTO SmsLogs(Name,Reg_ID,Message,Sms_date) VALUES ('$name','$reg_ID','$message',CURRENT_TIMESTAMP);";
+		$myquery = "INSERT INTO SmsLogs(Name,Reg_ID,Message,Sms_date) VALUES ('$name','$reg_ID','$message',CONVERT_TZ(CURRENT_TIMESTAMP,'-05:00','+00:00'));";
         if (mysqli_query($conn, $myquery))
         {   
             $result="Record entered  successfully";

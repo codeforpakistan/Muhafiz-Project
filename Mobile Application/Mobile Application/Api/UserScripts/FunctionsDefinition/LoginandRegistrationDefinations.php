@@ -85,13 +85,12 @@ function SendSms($MessageBody){
         $myquery = "INSERT INTO RegistrationTable(Email,Name,WorkedAt, OrganizationName, Mobileno,StationedAt,
 			Role, Password,RegistrationStatus, reg_date) VALUES ('$Email','$Name','$WorkedAt',
 			'$OrganizationName', '$Mobileno','$StationedAt','$Role', '$Password','$regstatus',
-			CURRENT_TIMESTAMP);";
+			CONVERT_TZ(CURRENT_TIMESTAMP,'-05:00','+00:00'));";
         if (mysqli_query($conn, $myquery))
 
         {
-            date_default_timezone_set("Asia/Dili");
-
-            $date = date("Y-m-d h:i:sa", strtotime("-4 hours"));
+            date_default_timezone_set("Asia/Karachi");
+            $date = date("Y-m-d h:i:sa", strtotime("+1 hours"));
 
             $message="Registration Request from: ".$Name.", OrganizationName: ".$OrganizationName.", Role: ".$Role.", DateandTime : ".$date;
             //SendSms($message);

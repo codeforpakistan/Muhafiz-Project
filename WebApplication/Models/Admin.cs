@@ -442,7 +442,13 @@ namespace WebApplication.Models
                     panic_Attack.UserDetail = new cPerson();
                     panic_Attack.PanicAttackdetail.PanicAttack_Id = Int32.Parse(reader["PanicAttack_Id"].ToString());
                     panic_Attack.PanicAttackdetail.User_Id = Int32.Parse(reader["RegistrationId"].ToString());
-                    panic_Attack.PanicAttackdetail.panic_date = reader["panic_date"].ToString();
+                    
+                    var outputTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pakistan Standard Time");
+                    var reportDateTimeRetrieved = Convert.ToDateTime(reader["panic_date"].ToString());
+                    var dateTimeInUtc = new DateTime(reportDateTimeRetrieved.Ticks, DateTimeKind.Utc);
+                    DateTime reportDateTimeConverted = TimeZoneInfo.ConvertTime(dateTimeInUtc, outputTimeZone);
+                    panic_Attack.PanicAttackdetail.panic_date = reportDateTimeConverted.ToString();
+
                     panic_Attack.PanicAttackdetail.Seen_Status = reader["seen_status"].ToString();
                     panic_Attack.UserDetail.email = reader["Email"].ToString();
                     panic_Attack.UserDetail.UserName = reader["Name"].ToString();
@@ -498,7 +504,12 @@ namespace WebApplication.Models
                        
                         string tmp = reader["RegistrationId"].ToString();
                         model.PanicAttackdetail.User_Id = Int32.Parse(tmp);
-                        model.PanicAttackdetail.panic_date = reader["panic_date"].ToString();
+                        
+                        var outputTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pakistan Standard Time");
+                        var reportDateTimeRetrieved = Convert.ToDateTime(reader["panic_date"].ToString());
+                        var dateTimeInUtc = new DateTime(reportDateTimeRetrieved.Ticks, DateTimeKind.Utc);
+                        DateTime reportDateTimeConverted = TimeZoneInfo.ConvertTime(dateTimeInUtc, outputTimeZone);
+                        model.PanicAttackdetail.panic_date = reportDateTimeConverted.ToString();                      
           
                     }
                 }
@@ -738,7 +749,9 @@ namespace WebApplication.Models
                         model.ThreatNotification_Id = Int32.Parse(reader["ThreatReportNotification_Id"].ToString());
                         model.Level_Of_Threat = reader["Level_of_Threat"].ToString();
                         model.Status = reader["Threat_status"].ToString();
-                        model.ReportDate = Convert.ToDateTime(reader["ReportDate"]);
+                        
+                        var reportDateTimeRetrieved = Convert.ToDateTime(reader["ReportDate"]);
+                        model.ReportDate = reportDateTimeRetrieved;
                        
 
 
@@ -949,7 +962,12 @@ namespace WebApplication.Models
                 cperson.role = reader["Role"].ToString();
                 cperson.orgname = reader["OrganizationName"].ToString();
                 cperson.station = reader["StationedAt"].ToString();
-                cperson.RegisterationDate = Convert.ToDateTime(reader["reg_date"]);
+
+                var dateTimeRetrieved = Convert.ToDateTime(reader["reg_date"]);
+                var outputTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pakistan Standard Time");
+                var outputDateTime = TimeZoneInfo.ConvertTime(dateTimeRetrieved, outputTimeZone);
+
+                cperson.RegisterationDate = outputDateTime;
                 model.Add(cperson);
             }
             connection.Close();
@@ -977,7 +995,10 @@ namespace WebApplication.Models
                 objthreat.ThreatNotification.ThreatNotification_Id = Int32.Parse(reader["ThreatReportNotification_Id"].ToString());
                 objthreat.ThreatNotification.User_Id = Int32.Parse(reader["RegistrationId"].ToString());
                 objthreat.ThreatNotification.Level_Of_Threat = reader["Level_of_Threat"].ToString();
-                objthreat.ThreatNotification.ReportDate = Convert.ToDateTime(reader["ReportDate"]);
+
+                var reportDateTimeRetrieved = Convert.ToDateTime(reader["ReportDate"]);
+                objthreat.ThreatNotification.ReportDate = reportDateTimeRetrieved;
+
                 objthreat.ThreatNotification.Status = reader["Threat_status"].ToString();
                 objthreat.Users.email = reader["Email"].ToString();
                 objthreat.Users.UserName = reader["Name"].ToString();

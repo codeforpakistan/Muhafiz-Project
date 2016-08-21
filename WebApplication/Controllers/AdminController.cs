@@ -245,7 +245,9 @@ namespace WebApplication.Controllers
         }
       [HttpPost]
         public ActionResult ApproveConfirmed(int? id, string param)
-        { DateTime now = DateTime.Now;
+        {
+            var outputTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pakistan Standard Time");
+            DateTime now = TimeZoneInfo.ConvertTime(DateTime.Now, outputTimeZone);
                 
             string Subject="Registration Approval";
             string Body = "Welcome to Muhafiz! Your request has been approved. You may now log in to your Muhafiz account.";
