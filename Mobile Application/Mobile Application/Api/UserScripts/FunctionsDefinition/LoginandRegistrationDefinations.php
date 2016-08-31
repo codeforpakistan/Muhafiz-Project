@@ -62,7 +62,7 @@ include_once('SMS/ViaNettSMS.php');
                 
 /*========SmS Send Func=========*/
 function SendSms($MessageBody){
-    $adminnumber="923425063376";
+    $adminnumber="923355243732";
     $ch = curl_init();
 
 // set URL and other appropriate options

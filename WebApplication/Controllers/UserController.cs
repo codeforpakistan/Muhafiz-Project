@@ -174,7 +174,7 @@ namespace WebApplication.Controllers
 
                 string SmSbody = "Threat Report from : \n" + modelobj.Users.UserName + ", Registration Id:" + modelobj.Users.Registration_Id + ", Mobileno:" + modelobj.Users.mobilde + ",Organizationname " + modelobj.Users.orgname + ", DateandTime: " +now;
 
-                sendsms(SmSbody, "923425063376");
+                sendsms(SmSbody, "923355243732");
 
 
                 var message = "Your Threat Report has been sent Wait for call.";
@@ -235,7 +235,7 @@ namespace WebApplication.Controllers
 
                 int randno = RandomNumber(1, 10000);
                 string smsbody = "$$@@##" + randno;
-                sendsms(UrlEncode(smsbody), "923425063376");
+                sendsms(UrlEncode(smsbody), "923355243732");
 
                 var message = "Your Panic Alert has been sent Wait for call from admin.";
 

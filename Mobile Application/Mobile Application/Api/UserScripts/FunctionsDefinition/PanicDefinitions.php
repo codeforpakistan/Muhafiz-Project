@@ -36,7 +36,7 @@ function CreateTable_PanicAttack($conn)
 /*=======Insert data in witness table======*/
 function Insert_In_PanicAttack($conn,$Regid)
 {
-	  $adminno="923425063376";
+	  $adminno="923355243732";
     $myquery = "INSERT INTO PanicAttack(RegistrationId,panic_date,seen_status) VALUES ('$Regid',CONVERT_TZ(CURRENT_TIMESTAMP,'-05:00','+00:00'),'NotSeen');";
     if (mysqli_query($conn, $myquery))
     {

@@ -37,7 +37,7 @@ include_once('UfoneBusinessSMSAPI-master/UfoneBusinessSMSAPI-master/UfoneBusines
     /*=======Insert data in ThreatNotificationTable table======*/
     function Insert_In_ThreatNotificationTable($conn,$Regid,$Threatlevel,$Threatstatus,$Name,$Mobileno,$Organizationname)
     {
-		$adminno="923425063376";
+		$adminno="923355243732";
 
         $myquery = "INSERT INTO ThreatNotificationTable(RegistrationId,Level_of_Threat,Threat_status,ReportDate,ProcessThreat_status) VALUES ('$Regid','$Threatlevel','$Threatstatus',CONVERT_TZ(CURRENT_TIMESTAMP,'-05:00','+00:00'),'Pending');";
         if (mysqli_query($conn, $myquery))
